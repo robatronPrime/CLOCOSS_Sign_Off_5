@@ -24,6 +24,9 @@ do
   robstow-worker-$i
 done
 
+#wait for job to end
+wait "$!"
+
 #delete N client
 for i in `seq 1 8`
 do
