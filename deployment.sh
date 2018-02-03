@@ -13,6 +13,7 @@ sudo npm install
 
 #run srever
 npm run server $key &
+gcloud logging write vm-logger 
 
 #create N client
 for i in `seq 1 8`
