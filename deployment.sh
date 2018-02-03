@@ -13,7 +13,6 @@ sudo npm install
 
 #run srever
 npm run server $key &
-gcloud logging write vm-logger 
 
 #create N client
 for i in `seq 1 8`
@@ -25,7 +24,10 @@ do
   robstow-worker-$i
 done
 
+#delete N client
 for i in `seq 1 8`
 do
 gcloud compute instances delete robstow-worker-$i --zone europe-west1-c
 done
+
+gcloud logging read rob-logger
