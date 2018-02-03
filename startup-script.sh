@@ -21,6 +21,6 @@ cd clocoss-master-worker
 sudo npm install
 
 npm run client $key $serverIp:8080
-gcloud logging write vm-logger "Contributing"
+gcloud logging write rob-logger "Contributing"
 
 gcloud compute instances stop $name --zone $zone

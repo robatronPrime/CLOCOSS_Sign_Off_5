@@ -18,7 +18,7 @@ npm run server $key &
 for i in `seq 1 8`
 do
   gcloud compute instances create --machine-type f1-micro --zone europe-west1-c \
-  --metadata serverIp="$serverIp",key="$key" --scopes compute-rw\
+  --metadata serverIp="$serverIp",key="$key" --scopes compute-rw,logging-write\
   --metadata-from-file startup-script=../startup-script.sh \
   --preemptible \
   robstow-worker-$i
