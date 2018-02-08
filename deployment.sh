@@ -6,11 +6,6 @@ key=`openssl rand -base64 32`
 #get server ip
 serverIp=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip" -H "Metadata-Flavor: Google")
 
-#installation
-sudo git clone https://github.com/portsoc/clocoss-master-worker
-cd clocoss-master-worker
-sudo npm install
-
 #run srever
 npm run server $key &
 
